@@ -5,10 +5,10 @@ function hus_css_js() {
     // Enqueue Bootstrap 5 CSS
     wp_enqueue_style('bootstrap', get_template_directory_uri() . '/css/bootstrap.css');
     
-    // Enqueue your theme's main CSS file (depends on Bootstrap)
+   
     wp_enqueue_style('main', get_template_directory_uri() . '/css/main.css', array('bootstrap'), null, 'all');
 
-    // Enqueue Bootstrap 5 JavaScript bundle (Popper.js included, no jQuery needed)
+   
     wp_enqueue_script('bootstrap-js', get_template_directory_uri() . '/js/bootstrap.bundle.min.js', array(), null, true);
 }
 add_action('wp_enqueue_scripts', 'hus_css_js');
@@ -164,7 +164,7 @@ function custom_mailer( PHPMailer\PHPMailer\PHPMailer $phpmailer ) {
     $phpmailer->SMTPAuth   = true;
     $phpmailer->SMTPSecure = 'tls';
     $phpmailer->Username   = 'hussein';
-    $phpmailer->Password   = '0936642993';
+    $phpmailer->Password   = '**********';
     $phpmailer->IsSMTP();  
 }
 
