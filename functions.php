@@ -117,13 +117,19 @@ function custom_mailer( PHPMailer\PHPMailer\PHPMailer $phpmailer ) {
     $phpmailer->SMTPAuth   = true;
     $phpmailer->SMTPSecure = 'tls';
     $phpmailer->Username   = 'hussein';
-<<<<<<< HEAD
     $phpmailer->Password   = '********';
-=======
-    $phpmailer->Password   = '**********';
->>>>>>> 5971ddfe8bd34c19d00f9cca816d69290190d0b2
-    $phpmailer->IsSMTP();  
 }
 
+// woocomerce 
+function mytheme_add_woocommerce_support() {
+    add_theme_support( 'woocommerce' );
+}
+add_action( 'after_setup_theme', 'mytheme_add_woocommerce_support' );
 
+// Remove default WooCommerce elements
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_title', 5 );
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
 
+// Add custom placements
+add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 5 );
+add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_title', 10 );
