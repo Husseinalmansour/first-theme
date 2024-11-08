@@ -28,53 +28,6 @@ register_nav_menus(
 );
 
 
-// custom post type
-function atoms_post_type(){
-
-        $args = 
-        [
-            'labels' => 
-            [
-            'name' => 'Atoms',   
-            'singular_name' => 'Atom'
-            ],
-            'hierarchical' => true, //'true = page', 'false = post'  
-            'public' => true,
-            'has_archive' => true,
-            'menu_icon' => 'dashicons-editor-unlink',
-            'supports' => ['title','editor','thumbnail','custom-fields']
-        ];
-
-        register_post_type('atoms', $args);
-}
-
-add_action('init','atoms_post_type');
-
-// custom taxonomy
-function weapons(){
-
-    $args = 
-    [
-        'labels' => 
-        [
-        'name' => 'weapons',
-        'singular_name' => 'weapon'   
-        ],
-        'hierarchical' => true, //'true = category', 'false = tag'
-        'public' => true,
-        
-    ];
-
-    register_taxonomy('weapons', ['atoms'], $args);
-
-};
-
-add_action('init','weapons');
-
-
-
-
-
 // Custom Image Sizes
 add_image_size( 'blog-large', 800, 400, true);
 add_image_size( 'blog-small', 300, 200, true);
@@ -164,7 +117,7 @@ function custom_mailer( PHPMailer\PHPMailer\PHPMailer $phpmailer ) {
     $phpmailer->SMTPAuth   = true;
     $phpmailer->SMTPSecure = 'tls';
     $phpmailer->Username   = 'hussein';
-    $phpmailer->Password   = '0936642993';
+    $phpmailer->Password   = '********';
     $phpmailer->IsSMTP();  
 }
 
