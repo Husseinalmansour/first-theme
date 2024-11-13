@@ -131,3 +131,12 @@ a:hover {
     justify-content: center;
     align-items: center;
 }
+
+/* Custom Cart Page Styles */
+table.table th, table.table td {
+    vertical-align: middle;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
