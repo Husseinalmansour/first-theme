@@ -140,3 +140,18 @@ img {
     max-width: 100%;
     height: auto;
 }
+
+.cart-item-info {
+    display: flex;
+    align-items: center;
+}
+.cart-item-info img {
+    width: 60px; /* Control image size */
+    margin-right: 10px;
+}
+.cart-item-price,
+.cart-item-quantity,
+.cart-item-total,
+.cart-item-remove {
+    vertical-align: middle; /* Center align text and buttons */
+}

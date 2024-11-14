@@ -134,3 +134,23 @@ remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_singl
 add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 5 );
 add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_title', 10 );
  
+
+
+function mytheme_add_elementor_support() {
+    // Enable support for Elementor
+    add_theme_support( 'elementor' );
+
+    // Optional: You can define Elementor's default content width
+    if (!isset($content_width)) {
+        $content_width = 1140; // Adjust based on your theme's container width
+    }
+}
+add_action( 'after_setup_theme', 'mytheme_add_elementor_support' );
+
+
+function mytheme_enqueue_styles() {
+    if ( ! did_action( 'elementor/loaded' ) ) {
+        wp_enqueue_style( 'mytheme-styles', get_stylesheet_uri() );
+    }
+}
+add_action( 'wp_enqueue_scripts', 'mytheme_enqueue_styles' );
