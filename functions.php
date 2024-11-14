@@ -137,12 +137,12 @@ add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_t
 
 
 function mytheme_add_elementor_support() {
-    // Enable support for Elementor
+    
     add_theme_support( 'elementor' );
 
-    // Optional: You can define Elementor's default content width
+    
     if (!isset($content_width)) {
-        $content_width = 1140; // Adjust based on your theme's container width
+        $content_width = 1140; 
     }
 }
 add_action( 'after_setup_theme', 'mytheme_add_elementor_support' );

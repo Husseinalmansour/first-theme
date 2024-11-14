@@ -146,12 +146,12 @@ img {
     align-items: center;
 }
 .cart-item-info img {
-    width: 60px; /* Control image size */
+    width: 60px;
     margin-right: 10px;
 }
 .cart-item-price,
 .cart-item-quantity,
 .cart-item-total,
 .cart-item-remove {
-    vertical-align: middle; /* Center align text and buttons */
+    vertical-align: middle; 
 }
